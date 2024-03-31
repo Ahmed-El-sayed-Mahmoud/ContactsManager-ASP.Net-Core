@@ -13,13 +13,7 @@ Welcome to the Contact Manager Web App! This application is built using ASP.NET 
 
 - ASP.NET Core
 - MVC (Model-View-Controller) architecture
-- Entity Framework Core (for database operations)
+- - Xunit for unit testing
 - DTO (Data Transfer Object) pattern
-- Xunit for unit testing
 
-## Getting Started
 
-1. Clone the repository to your local machine:
-
-```bash
-git clone https://github.com/your-username/contact-manager.git
