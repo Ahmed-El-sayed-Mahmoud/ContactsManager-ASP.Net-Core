@@ -1,0 +1,183 @@
+﻿@model IEnumerable<PersonResponse>
+@{
+    ViewBag.Title = "Persons";
+    string sortOrder = SortOrderOptions.ASC.ToString();
+    if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+        sortOrder = SortOrderOptions.DESC.ToString();
+}
+<form action="~/index" method="get">
+ <h1>Contacts</h1>
+
+ <div class="box flex">
+  <div class="flex-1">
+   <select class="form-input" name="searchBy">
+                @foreach (var field in ViewBag.SearchFields)
+                {
+                    if (field.Key == ViewBag.CurrentSearchBy)
+                    {
+              <option value="@field.Key" selected="selected">@field.Value</option>
+                    }
+                    else
+                    {
+              <option value="@field.Key">@field.Value</option>
+                    }
+
+                }
+   </select>
+  </div>
+
+  <div class="flex-1">
+   <input type="search" id="Search" class="form-input" placeholder="Search" name="searchText" value="@ViewBag.CurrentSearchText" />
+  </div>
+
+  <div class="flex-1">
+   <button class="button button-blue-back">Search</button>
+   <a href="~/persons/index" class="link-hover">Clear all</a>
+  </div>
+ </div>
+
+
+ <table class="table w-100 mt">
+  <thead>
+   <tr>
+      <th> <a href="~/index?SortBy=@nameof(PersonResponse.PersonName)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy"> Person Name</a>
+                    @{
+                        if (ViewBag.SortBy == nameof(PersonResponse.PersonName))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                            <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                    <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }
+      
+      </th>
+   
+    <th> <a href="~/index?SortBy=@nameof(PersonResponse.Email)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy"> Email</a>
+                    @{
+                        if (ViewBag.SortBy == nameof(PersonResponse.Email))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                                    <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                            <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }</th>
+
+    <th> <a href="~/index?SortBy=@nameof(PersonResponse.DateOfBirth)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy">Date Of Birth</a>
+                    @{
+                        if (ViewBag.SortBy==nameof(PersonResponse.DateOfBirth))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                                    <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                            <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }
+    </th>
+
+    <th> <a href="~/index?SortBy=@nameof(PersonResponse.Age)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy"> Age</a>
+                    @{
+                        if (ViewBag.SortBy == nameof(PersonResponse.Age))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                                    <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                            <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }
+    </th>
+
+    <th> <a href="~/index?SortBy=@nameof(PersonResponse.Gender)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy"> Gender</a>
+                    @{
+                        if (ViewBag.SortBy == nameof(PersonResponse.Gender))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                                    <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                            <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }
+    </th>
+
+    <th> <a href="~/index?SortBy=@nameof(PersonResponse.Country)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy"> Country</a>
+                    @{
+                        if (ViewBag.SortBy == nameof(PersonResponse.Country))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                                    <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                            <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }
+    </th>
+
+    <th> <a href="~/index?SortBy=@nameof(PersonResponse.Address)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy">Address</a>
+                    @{
+                        if (ViewBag.SortBy == nameof(PersonResponse.Address))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                                    <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                            <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }
+    </th>
+
+    <th> <a href="~/index?SortBy=@nameof(PersonResponse.ReceiveNewsLetters)&sortOrderOptions=@sortOrder
+&searchText=@ViewBag.CurrentSearchText&searchBy=@ViewBag.CurrentSearchBy"> Recieve News Letters</a>
+                    @{
+                        if (ViewBag.SortBy == nameof(PersonResponse.ReceiveNewsLetters))
+                        if (ViewBag.SortOrderOptions == SortOrderOptions.ASC.ToString())
+                        {
+                                    <i class="fa-solid fa-sort-up"></i>
+                        }
+                        else
+                        {
+                                            <i class="fa-solid fa-sort-down"></i>
+                        }
+                    }
+    </th>
+
+   </tr>
+  </thead>
+  <tbody>
+            @foreach (PersonResponse person in Model)
+            {
+        <tr>
+             <td  style="width:15%">@person.PersonName</td>
+             <td  style="width:15%">@person.Email</td>
+             <td  style="width:15%">@person.DateOfBirth?.ToString("dd MMM yyyy")</td>
+             <td  style="width:8%">@person.Age</td>
+             <td  style="width:10%">@person.Gender</td>
+             <td  style="width:10%">@person.Country</td>
+             <td  style="width:20%">@person.Address</td>
+             <td  style="width:5%">@person.ReceiveNewsLetters</td>
+        </tr>
+            }
+   <tr></tr>
+  </tbody>
+
+ </table>
+</form>
