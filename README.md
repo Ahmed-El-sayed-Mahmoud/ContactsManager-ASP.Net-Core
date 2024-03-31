@@ -4,10 +4,11 @@ Welcome to the Contact Manager Web App! This application is built using ASP.NET 
 
 ## Features
 
-- View existing contacts
+- View existing contacts and sort them according to names,age,email...
 - Add new contacts
 - Edit existing contacts
 - Delete contacts
+  
 
 ## Technologies Used
 
