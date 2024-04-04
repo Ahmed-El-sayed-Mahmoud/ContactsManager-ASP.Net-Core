@@ -27,7 +27,7 @@ namespace ServiceContracts.DTO
                 CountryID = CountryId,
                 DateOfBirth = DateOfBirth,
                 Email = Email?.Trim(),
-                Gender = Gender != null ? (GenderOptions)Enum.Parse(typeof(GenderOptions), Gender) : null,
+                Gender = Gender,
                 PersonName = PersonName?.Trim(),
                 PersonID = Guid.NewGuid(),
                 ReceiveNewsLetters = ReceiveNewsLetters,

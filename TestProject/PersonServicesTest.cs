@@ -14,8 +14,8 @@ namespace TestProject
         public PersonServicesTest(ITestOutputHelper testOutputHelper)
         {
             _outputHelper = testOutputHelper;
-            _personService = new PersonServices(false);
-            _countryService = new CountryServices(false);
+           // _personService = new PersonServices(false);
+           // _countryService = new CountryServices(false);
         }
         #region AddPerson
         [Fact]

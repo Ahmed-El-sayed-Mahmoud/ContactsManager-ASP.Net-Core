@@ -17,7 +17,7 @@ namespace ServiceContracts.DTO
     {
         public static CountryResponse ToCountryResponse(this Country country)
         {
-            return new CountryResponse() { CountryName = country.CountryName, CountryId = country.CountryId };
+            return new CountryResponse() { CountryName = country.CountryName, CountryId = country.CountryID };
         }
     }
 }

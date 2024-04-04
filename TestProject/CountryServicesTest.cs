@@ -2,6 +2,7 @@ using ServiceContracts;
 using ServiceContracts.DTO;
 using Services;
 using Xunit.Abstractions;
+using Entities;
 
 namespace TestProject
 {
@@ -11,8 +12,8 @@ namespace TestProject
         private readonly ITestOutputHelper _outputHelper;
         public CountryServicesTest(ITestOutputHelper testOutputHelper)
         {
-            _countryService = new CountryServices(false);
-            _outputHelper = testOutputHelper;
+            //_countryService = new CountryServices(PersonsDbContext personsDbContext);
+            //_outputHelper = testOutputHelper;
         }
         #region AddCountry
         [Fact]

@@ -7,7 +7,7 @@ namespace ServiceContracts.DTO
         public string? CountryName { get; set; }
         public Country ToCountry()
         {
-            return new Country() { CountryName = CountryName, CountryId = Guid.NewGuid() };
+            return new Country() { CountryName = CountryName, CountryID = Guid.NewGuid() };
         }
     }
 }

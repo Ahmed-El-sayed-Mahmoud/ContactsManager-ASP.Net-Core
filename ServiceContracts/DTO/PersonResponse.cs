@@ -43,7 +43,7 @@ namespace ServiceContracts.DTO
     }
     public static class PersonExtensions
     {
-        public static PersonResponse ToPersonResponse(this Person person)
+        public static PersonResponse ToPersonResponse(this Person?  person)
         {
             return new PersonResponse()
             {
@@ -52,7 +52,8 @@ namespace ServiceContracts.DTO
                 CountryID = person.CountryID,
                 DateOfBirth = person.DateOfBirth,
                 Email = person.Email,
-                Gender = person.Gender,
+                //Gender =(GenderOptions)Enum.Parse<GenderOptions>(person?.Gender),
+                Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions),person.Gender),
                 PersonName = person.PersonName,
                 PersonID = person.PersonID,
                 ReceiveNewsLetters = person.ReceiveNewsLetters,
