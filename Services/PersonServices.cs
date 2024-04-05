@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Entities.Enums;
+using Microsoft.EntityFrameworkCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using Services.ValidationHelpers;
@@ -27,8 +28,10 @@ namespace Services
                 throw new ArgumentException("This Contact already exist with the same name and Email");
             }
             Person person = request.ToPerson();
-            _db.Persons.Add(person);
-            _db.SaveChanges();
+            person.Country = _countriesService.GetCountryById(request.CountryId)?.CountryName;
+            //_db.Persons.Add(person);
+            //_db.SaveChanges();
+            _db.sp_AddPerson(person);
             PersonResponse personResponse = person.ToPersonResponse();
             personResponse.Country = _countriesService.GetCountryById(personResponse.CountryID)?.CountryName;
             return personResponse;
@@ -51,7 +54,9 @@ namespace Services
 
         public List<PersonResponse> GetAllPeople()
         {
-            return _db.sp_GetAllPersons().Select(temp=>temp.ToPersonResponse()).ToList();
+            // return _db.sp_GetAllPersons().Select(temp=>temp.ToPersonResponse()).ToList();
+            var persons = _db.Persons.Include("country").ToList();
+           return persons.Select(t=>t.ToPersonResponse()).ToList();
         }
         public List<PersonResponse> GetFiltered(string? SearchString, string? SearchBy)
         {

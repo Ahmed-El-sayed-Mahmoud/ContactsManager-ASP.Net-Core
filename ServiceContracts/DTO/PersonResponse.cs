@@ -47,11 +47,11 @@ namespace ServiceContracts.DTO
         {
             return new PersonResponse()
             {
-                Address = person.Address,
-                Country = person.Country,
-                CountryID = person.CountryID,
-                DateOfBirth = person.DateOfBirth,
-                Email = person.Email,
+                Address = person?.Address,
+                Country = person?.country?.CountryName,
+                CountryID = person?.CountryID,
+                DateOfBirth = person?.DateOfBirth,
+                Email = person?.Email,
                 //Gender =(GenderOptions)Enum.Parse<GenderOptions>(person?.Gender),
                 Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions),person.Gender),
                 PersonName = person.PersonName,

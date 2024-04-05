@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,10 +30,31 @@ namespace Entities
             List<Person>? PersonsList = System.Text.Json.JsonSerializer.Deserialize<List<Person>>(PersonsString);
             foreach (Person person in PersonsList)
                 modelBuilder.Entity<Person>().HasData(person);
+            //fluent API
+            modelBuilder.Entity<Person>().Property(temp => temp.TIN).HasColumnName("TIN")
+                                                                    .HasColumnType("varchar(8)")
+                                                                    .HasDefaultValue("ABC8741");
+            //modelBuilder.Entity<Person>().HasIndex(temp => temp.TIN).IsUnique();
+            modelBuilder.Entity<Person>().HasCheckConstraint("CHK_TIN", "len([TIN])=8");
         }
         public List<Person> sp_GetAllPersons()
         {
             return Persons.FromSqlRaw("EXECUTE [dbo].[GetAllPersons]").ToList(); 
+        }
+        public int sp_AddPerson(Person person)
+        {
+            SqlParameter[] parameters = new SqlParameter[] { 
+            new SqlParameter("personID",person.PersonID),
+            new SqlParameter("personName",person.PersonName),
+            new SqlParameter("DateOfBirth",person.DateOfBirth),
+            new SqlParameter("Email",person.Email),
+            new SqlParameter("Gender",person.Gender),
+            new SqlParameter("CountryID",person.CountryID),
+            new SqlParameter("Country",person.Country),
+            new SqlParameter("Address",person.Address),
+            new SqlParameter("ReceiveNewsLetters",person.ReceiveNewsLetters),
+            };
+           return  Database.ExecuteSqlRaw("EXECUTE [dbo].[AddPerson] @PersonID, @PersonName, @DateOfBirth, @Email, @Gender, @CountryID,@Country, @Address, @ReceiveNewsLetters", parameters);
         }
     }
 }
