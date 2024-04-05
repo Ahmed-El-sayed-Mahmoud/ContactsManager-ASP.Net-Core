@@ -15,7 +15,7 @@ namespace ContactsManager.Controllers
         }
         [Route("/")]
         [Route("~/Index")]
-        public IActionResult Index(string searchBy, string searchText, string SortBy = nameof(PersonResponse.PersonName)
+        public async Task<IActionResult> Index(string searchBy, string searchText, string SortBy = nameof(PersonResponse.PersonName)
             , string sortOrderOptions = "ASC")
         {
             ViewBag.SearchFields = new Dictionary<string, string>()
@@ -31,33 +31,33 @@ namespace ContactsManager.Controllers
             ViewBag.CurrentSearchBy = searchBy;
             ViewBag.SortBy = SortBy;
             ViewBag.SortOrderOptions = sortOrderOptions;
-            List<PersonResponse> persons = _personServices.GetFiltered(searchText, searchBy);
-            List<PersonResponse> SortedList = _personServices.GetSortedPersons(persons, SortBy,
+            List<PersonResponse> persons = await _personServices.GetFiltered(searchText, searchBy);
+            List<PersonResponse> SortedList =await  _personServices.GetSortedPersons(persons, SortBy,
                 (SortOrderOptions)Enum.Parse<SortOrderOptions>(sortOrderOptions));
             return View(SortedList);
         }
         [HttpGet]
         [Route("~/Create")]
-        public IActionResult CreateContact()
+        public async Task< IActionResult> CreateContact()
         {
             //_personServices.AddPerson(request);
-            List<CountryResponse> countries = _countryServices.GetAllCountries();
+            List<CountryResponse> countries = await _countryServices.GetAllCountries();
             ViewBag.Countries = countries;
             return View();
         }
 
         [Route("~/Create")]
         [HttpPost]
-        public IActionResult CreateContact(AddPersonRequest request)
+        public async Task<IActionResult> CreateContact(AddPersonRequest request)
         {
             if (!ModelState.IsValid)
             {
-                List<CountryResponse> countries = _countryServices.GetAllCountries();
+                List<CountryResponse> countries = await _countryServices.GetAllCountries();
                 ViewBag.Countries = countries;
                 ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
                 return View(request);
             }
-            _personServices.AddPerson(request);
+            await _personServices.AddPerson(request);
             return RedirectToAction("Index");
         }
 

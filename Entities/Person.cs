@@ -21,7 +21,6 @@ namespace Entities
         public string? Address { get; set; }
         public bool ReceiveNewsLetters { get; set; }
         public string? TIN { get; set; }
-        public virtual Country country { get; set; }
-        public int x;
+        public virtual Country? country { get; set; }
     }
 }
