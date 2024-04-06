@@ -4,7 +4,7 @@
 
 namespace Entities.Migrations
 {
-    public partial class TIN_Modifiction : Migration
+    public partial class TIN_Fix2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,8 +15,9 @@ namespace Entities.Migrations
                 nullable: true,
                 defaultValue: "ABC87417",
                 oldClrType: typeof(string),
-                oldType: "nvarchar(max)",
-                oldNullable: true);
+                oldType: "varchar(8)",
+                oldNullable: true,
+                oldDefaultValue: "ABC8741");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -24,12 +25,13 @@ namespace Entities.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "TIN",
                 table: "Persons",
-                type: "nvarchar(max)",
+                type: "varchar(8)",
                 nullable: true,
+                defaultValue: "ABC8741",
                 oldClrType: typeof(string),
                 oldType: "varchar(8)",
                 oldNullable: true,
-                oldDefaultValue: "ABC8741");
+                oldDefaultValue: "ABC87417");
         }
     }
 }

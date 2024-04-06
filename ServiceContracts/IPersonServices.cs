@@ -1,4 +1,5 @@
 ﻿using Entities.Enums;
+using Microsoft.AspNetCore.Http;
 using ServiceContracts.DTO;
 
 namespace ServiceContracts
@@ -13,5 +14,6 @@ namespace ServiceContracts
         Task<PersonResponse> UpdatePerson(UpdatePersonRequest? personUpdateRequest);
         Task<bool> DeletePerson(Guid? ID);
         Task<MemoryStream> GetPersonsExcel();
+        Task<int> UploadExcelFile(IFormFile formFile);
     }
 }

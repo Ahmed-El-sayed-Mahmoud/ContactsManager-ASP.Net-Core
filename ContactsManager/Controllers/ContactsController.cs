@@ -81,5 +81,27 @@ namespace ContactsManager.Controllers
             return File(memoryStream, "pplication/vnd.openxmlformats-officedocument.spreadsheetml.sheet","persons.xlsx");
 
         }
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> UploadExcel()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Route("[action]")]
+        public async Task<IActionResult>UploadExcel(IFormFile formFile)
+        {
+            if (formFile == null)
+                ViewBag.ErrorMessage = "No File was Uploaded";
+            else if(Path.GetExtension(formFile.FileName).ToLower()!=".xlsx")
+            {
+                ViewBag.ErrorMessage = "The file should be with extension .xlsx";
+            }
+            else
+            {
+                ViewBag.Message= $"{ await  _personServices.UploadExcelFile(formFile)} contacts ware Added Successfully";
+            }
+            return View();
+        }
     }
 }

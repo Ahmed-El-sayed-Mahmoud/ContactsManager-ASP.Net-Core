@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Entities.Enums;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
 using ServiceContracts;
@@ -33,6 +34,10 @@ namespace Services
             }
             Person person = request.ToPerson();
             person.Country =( await _countriesService.GetCountryById(request.CountryId))?.CountryName;
+            
+             CountryResponse? c = (await _countriesService.GetAllCountries()).FirstOrDefault(t => t.CountryName == request.Country);
+            person.CountryID=c?.CountryId;
+            person.Country = c?.CountryName;
             //_db.Persons.Add(person);
             //_db.SaveChanges();
             _db.sp_AddPerson(person);
@@ -205,6 +210,61 @@ namespace Services
             }
             memoryStream.Position = 0;
             return memoryStream;
+        }
+
+        public async Task<int> UploadExcelFile(IFormFile formFile)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            await formFile.CopyToAsync(memoryStream);
+            int PersonsAdded = 0;
+            using(var package=new ExcelPackage(memoryStream))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets["persons"];
+                if(worksheet==null)
+                {
+                    return 0;
+                }
+                int rowsCount = worksheet.Rows.Count();
+                if (rowsCount == 0)
+                    return 0;
+                
+                for(int cur_row = 2; cur_row<=rowsCount; cur_row++)
+                {
+                    AddPersonRequest person=new AddPersonRequest();
+                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 1].Value?.ToString()))
+                        person.PersonName = worksheet.Cells[cur_row, 1].Value?.ToString();
+                    else
+                        continue;
+                    
+                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 2].Value?.ToString()))
+                        person.Email = worksheet.Cells[cur_row, 2].Value?.ToString();
+                    else 
+                        continue;
+                    
+                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 3].Value?.ToString()))
+                        person.DateOfBirth =Convert.ToDateTime( worksheet.Cells[cur_row, 3].Value);
+                   
+                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 4].Value?.ToString()))
+                        person.Gender = worksheet.Cells[cur_row, 4].Value?.ToString();
+                    
+                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 5].Value?.ToString()))
+                        person.Country = worksheet.Cells[cur_row, 5].Value?.ToString();
+                   
+                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 6].Value?.ToString()))
+                        person.Address = worksheet.Cells[cur_row, 6].Value?.ToString();
+
+                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 7].Value?.ToString()))
+                        person.ReceiveNewsLetters = Convert.ToBoolean(worksheet.Cells[cur_row, 7].Value);
+
+
+                    if(!_db.Persons.Where(t=>t.Email==person.Email&&t.PersonName==person.PersonName).Any())
+                    {
+                        await AddPerson(person);
+                        PersonsAdded++;
+                    }
+                }
+            }
+            return PersonsAdded;
         }
     }
 }
