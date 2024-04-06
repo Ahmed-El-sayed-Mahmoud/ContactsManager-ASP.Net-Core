@@ -1,9 +1,13 @@
 ﻿using Entities;
 using Entities.Enums;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using Services.ValidationHelpers;
+using System;
+using System.ComponentModel;
+using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace Services
 {
@@ -163,6 +167,44 @@ namespace Services
 
             return person.ToPersonResponse();
 
+        }
+        public async Task<MemoryStream> GetPersonsExcel()
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            MemoryStream memoryStream = new MemoryStream();
+            using (var package = new ExcelPackage(memoryStream))
+            {
+                ExcelWorksheet workSheet = package.Workbook.Worksheets.Add("Persons Sheet");
+                workSheet.Cells["A1"].Value = "Person Name";
+                workSheet.Cells["B1"].Value = "Email";
+                workSheet.Cells["C1"].Value = "Date of Birth";
+                workSheet.Cells["D1"].Value = "Age";
+                workSheet.Cells["E1"].Value = "Gender";
+                workSheet.Cells["F1"].Value = "Country";
+                workSheet.Cells["G1"].Value = "Address";
+                workSheet.Cells["H1"].Value = "Receive News Letters";
+                workSheet.Cells["A1:H1"].Style.Fill.SetBackground(System.Drawing.Color.Gray);
+                workSheet.Cells.Style.HorizontalAlignment=OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                List<PersonResponse>persons = await _db.Persons.Include("country").Select(t=>t.ToPersonResponse()).ToListAsync();
+                int cur_row = 2;
+                foreach(PersonResponse personResponse in persons)
+                {
+                    workSheet.Cells[cur_row, 1].Value = personResponse.PersonName;
+                    workSheet.Cells[cur_row, 2].Value = personResponse.Email;
+                    if (personResponse.DateOfBirth.HasValue)
+                        workSheet.Cells[cur_row, 3].Value = personResponse.DateOfBirth.Value.ToString("yyyy-MM-dd");
+                    workSheet.Cells[cur_row, 4].Value = personResponse.Age;
+                    workSheet.Cells[cur_row, 5].Value = personResponse.Gender;
+                    workSheet.Cells[cur_row, 6].Value = personResponse.Country;
+                    workSheet.Cells[cur_row, 7].Value = personResponse.Address;
+                    workSheet.Cells[cur_row, 8].Value = personResponse.ReceiveNewsLetters;
+                    cur_row++;
+                }
+                workSheet.Cells["A1:H1"].AutoFitColumns();
+                await package.SaveAsync();
+            }
+            memoryStream.Position = 0;
+            return memoryStream;
         }
     }
 }

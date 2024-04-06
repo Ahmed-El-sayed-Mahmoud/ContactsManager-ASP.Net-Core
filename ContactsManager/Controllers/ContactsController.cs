@@ -74,5 +74,12 @@ namespace ContactsManager.Controllers
             };
 
         }
+        [Route("[action]")]
+        public async Task<IActionResult> personsExcel()
+        {
+            MemoryStream memoryStream = await _personServices.GetPersonsExcel();
+            return File(memoryStream, "pplication/vnd.openxmlformats-officedocument.spreadsheetml.sheet","persons.xlsx");
+
+        }
     }
 }

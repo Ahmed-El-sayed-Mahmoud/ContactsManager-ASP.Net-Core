@@ -12,5 +12,6 @@ namespace ServiceContracts
         Task<List<PersonResponse>> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder);
         Task<PersonResponse> UpdatePerson(UpdatePersonRequest? personUpdateRequest);
         Task<bool> DeletePerson(Guid? ID);
+        Task<MemoryStream> GetPersonsExcel();
     }
 }
