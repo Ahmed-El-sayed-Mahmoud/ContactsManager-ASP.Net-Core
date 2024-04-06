@@ -1,5 +1,6 @@
 ﻿using Entities.Enums;
 using Microsoft.AspNetCore.Mvc;
+using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 namespace ContactsManager.Controllers
@@ -32,13 +33,13 @@ namespace ContactsManager.Controllers
             ViewBag.SortBy = SortBy;
             ViewBag.SortOrderOptions = sortOrderOptions;
             List<PersonResponse> persons = await _personServices.GetFiltered(searchText, searchBy);
-            List<PersonResponse> SortedList =await  _personServices.GetSortedPersons(persons, SortBy,
+            List<PersonResponse> SortedList = await _personServices.GetSortedPersons(persons, SortBy,
                 (SortOrderOptions)Enum.Parse<SortOrderOptions>(sortOrderOptions));
             return View(SortedList);
         }
         [HttpGet]
         [Route("~/Create")]
-        public async Task< IActionResult> CreateContact()
+        public async Task<IActionResult> CreateContact()
         {
             //_personServices.AddPerson(request);
             List<CountryResponse> countries = await _countryServices.GetAllCountries();
@@ -60,6 +61,18 @@ namespace ContactsManager.Controllers
             await _personServices.AddPerson(request);
             return RedirectToAction("Index");
         }
+        [Route("[action]")]
+        public async Task<IActionResult> personsPDF()
+        {
+            List<PersonResponse> AllPersons = await _personServices.GetAllPeople();
 
+            return new ViewAsPdf("PersonsPDF", AllPersons, ViewData)
+            {
+                PageMargins = new Rotativa.AspNetCore.Options.Margins() { Top = 20, Right = 20, Bottom = 20, Left = 20 },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Landscape
+                
+            };
+
+        }
     }
 }
