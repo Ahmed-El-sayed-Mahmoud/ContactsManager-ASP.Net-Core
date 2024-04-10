@@ -7,8 +7,8 @@ namespace Services
 {
     public class CountryServices : ICountryServices
     {
-        private readonly PersonsDbContext _db;
-        public CountryServices(PersonsDbContext personsDbContext)
+        private readonly ApplicationDbContext _db;
+        public CountryServices(ApplicationDbContext personsDbContext)
         {
            _db = personsDbContext;
         }

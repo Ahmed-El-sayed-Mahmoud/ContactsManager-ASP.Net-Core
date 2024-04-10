@@ -1,6 +1,7 @@
 ﻿using Entities.Enums;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
 {
@@ -19,7 +20,7 @@ namespace Entities
         public string? Country { get; set; }
         [StringLength(200)]
         public string? Address { get; set; }
-        public bool ReceiveNewsLetters { get; set; }
+        public bool? ReceiveNewsLetters { get; set; }
         public string? TIN { get; set; }
         public virtual Country? country { get; set; }
     }

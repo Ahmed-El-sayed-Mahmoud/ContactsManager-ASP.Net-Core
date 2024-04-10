@@ -18,7 +18,7 @@ namespace ServiceContracts.DTO
         public string? Gender { get; set; }
         public Guid? CountryId { get; set; }
         public string? Address { get; set; }
-        public bool ReceiveNewsLetters { get; set; }
+        public bool? ReceiveNewsLetters { get; set; }
         public Person ToPerson()
         {
             return new Person()

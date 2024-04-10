@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class PersonsDbContext:DbContext
+    public class ApplicationDbContext:DbContext
     {
-        public DbSet<Person>? Persons { get; set; }
-        public DbSet<Country>?Countries { get; set; }
+        public virtual DbSet<Person>? Persons { get; set; }
+        public virtual DbSet<Country>?Countries { get; set; }
 
-        public PersonsDbContext(DbContextOptions<PersonsDbContext> options) : base(options) { 
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { 
         
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

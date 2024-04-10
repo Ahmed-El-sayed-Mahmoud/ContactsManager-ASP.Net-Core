@@ -4,6 +4,7 @@ using Services;
 using Xunit.Abstractions;
 using Entities;
 using Microsoft.EntityFrameworkCore;
+using EntityFrameworkCoreMock;
 
 namespace TestProject
 {
@@ -13,7 +14,12 @@ namespace TestProject
         private readonly ITestOutputHelper _outputHelper;
         public CountryServicesTest(ITestOutputHelper testOutputHelper)
         {
-            _countryService = new CountryServices(new PersonsDbContext (new DbContextOptionsBuilder<PersonsDbContext>().Options));
+            List<Country> SeedData = new List<Country>();
+            DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(
+               new DbContextOptionsBuilder<ApplicationDbContext>().Options);
+            var dbContext= dbContextMock.Object;
+            _countryService=new CountryServices(dbContext);
+            dbContextMock.CreateDbSetMock<Country>(t => t.Countries,SeedData);
             _outputHelper = testOutputHelper;
         }
         #region AddCountry

@@ -15,8 +15,8 @@ namespace Services
     public class PersonServices : IPersonServices
     {
         private readonly ICountryServices _countriesService;
-        private readonly PersonsDbContext _db;
-        public PersonServices(PersonsDbContext personsDbContext , ICountryServices countryServices)
+        private readonly ApplicationDbContext _db;
+        public PersonServices(ApplicationDbContext personsDbContext , ICountryServices countryServices)
         {
             _countriesService =countryServices;
             _db = personsDbContext;
@@ -38,9 +38,9 @@ namespace Services
              CountryResponse? c = (await _countriesService.GetAllCountries()).FirstOrDefault(t => t.CountryName == request.Country);
             person.CountryID=c?.CountryId;
             person.Country = c?.CountryName;
-            //_db.Persons.Add(person);
-            //_db.SaveChanges();
-            _db.sp_AddPerson(person);
+            _db.Persons.Add(person);
+           await _db.SaveChangesAsync();
+            //_db.sp_AddPerson(person);
             PersonResponse personResponse = person.ToPersonResponse();
             personResponse.Country = (await _countriesService.GetCountryById(personResponse.CountryID))?.CountryName;
             return personResponse;
