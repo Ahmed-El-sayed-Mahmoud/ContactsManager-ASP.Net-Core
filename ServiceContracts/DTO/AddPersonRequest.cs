@@ -14,6 +14,7 @@ namespace ServiceContracts.DTO
         public string? Email { get; set; }
 
         public DateTime? DateOfBirth { get; set; }
+        [Required(ErrorMessage = "Choose a Gender")]
         public string? Gender { get; set; }
         public Guid? CountryId { get; set; }
         public string? Address { get; set; }

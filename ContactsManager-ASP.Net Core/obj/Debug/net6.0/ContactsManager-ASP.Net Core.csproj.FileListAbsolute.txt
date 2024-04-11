@@ -1,0 +1,168 @@
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\appsettings.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.exe
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.deps.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.runtimeconfig.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Humanizer.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Rotativa.AspNetCore.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.AssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.ContactsManager-ASP.Net Core.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.build.ContactsManager-ASP.Net Core.props
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ContactsManager-ASP.Net Core.props
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ContactsManager-ASP.Net Core.props
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\scopedcss\bundle\ContactsManager-ASP.Net Core.styles.css
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.csproj.CopyComplete
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\refint\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.genruntimeconfig.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ref\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\EPPlus.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Repositories.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Services.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Repositories.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\RepositoryContracts.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ServiceContracts.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Services.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\countries.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\persons.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.RazorAssemblyInfo.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.RazorAssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.staticwebassets.runtime.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\appsettings.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\countries.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\persons.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.staticwebassets.runtime.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.exe
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.deps.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.runtimeconfig.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ContactsManager-ASP.Net Core.pdb
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\EPPlus.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\EPPlus.Interfaces.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\EPPlus.System.Drawing.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Humanizer.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Rotativa.AspNetCore.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Repositories.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Services.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Repositories.pdb
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\RepositoryContracts.pdb
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\ServiceContracts.pdb
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Services.pdb
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.AssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.RazorAssemblyInfo.cache
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.RazorAssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.ContactsManager-ASP.Net Core.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.build.ContactsManager-ASP.Net Core.props
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ContactsManager-ASP.Net Core.props
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ContactsManager-ASP.Net Core.props
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\scopedcss\bundle\ContactsManager-ASP.Net Core.styles.css
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.csproj.CopyComplete
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\refint\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.pdb
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.genruntimeconfig.cache
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ref\ContactsManager-ASP.Net Core.dll

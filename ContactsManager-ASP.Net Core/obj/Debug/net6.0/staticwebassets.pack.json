@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\StyleSheet.css",
+      "PackagePath": "staticwebassets\\StyleSheet.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\style.css",
+      "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ContactsManager-ASP.Net Core.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ContactsManager-ASP.Net Core.props",
+      "PackagePath": "build\\ContactsManager-ASP.Net Core.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ContactsManager-ASP.Net Core.props",
+      "PackagePath": "buildMultiTargeting\\ContactsManager-ASP.Net Core.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ContactsManager-ASP.Net Core.props",
+      "PackagePath": "buildTransitive\\ContactsManager-ASP.Net Core.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

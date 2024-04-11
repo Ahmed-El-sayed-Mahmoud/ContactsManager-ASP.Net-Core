@@ -1,5 +1,4 @@
 ﻿using Entities;
-using ServiceContracts.DTO;
 
 namespace RepositoryContracts
 {

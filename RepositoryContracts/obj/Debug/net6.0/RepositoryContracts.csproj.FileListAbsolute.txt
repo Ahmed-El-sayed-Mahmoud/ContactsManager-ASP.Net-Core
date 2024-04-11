@@ -1,0 +1,30 @@
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.AssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.deps.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.CopyComplete
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\refint\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\RepositoryContracts\obj\Debug\net6.0\ref\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.deps.json
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\bin\Debug\net6.0\RepositoryContracts.pdb
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.AssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.csproj.CopyComplete
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\refint\RepositoryContracts.dll
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\RepositoryContracts.pdb
+C:\Users\user\Desktop\ContactsManager\RepositoryContracts\obj\Debug\net6.0\ref\RepositoryContracts.dll

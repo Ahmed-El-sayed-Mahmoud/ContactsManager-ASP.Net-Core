@@ -27,18 +27,21 @@ namespace Services
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
             ValidationHelper.ModelValidator(request);
-            bool duplicate = (await _personsRepository.GetAllPeople())?.Where(temp => (temp.PersonName == request.PersonName!.Trim())&&(temp.Email == request.Email!.Trim()) )!=null;
+            Person? dub = (await _personsRepository.GetAllPeople())?.FirstOrDefault(temp => temp.PersonName == request.PersonName!.Trim() && temp.Email == request.Email!.Trim());
 
-            if (duplicate)
+            if (dub!=null)
             {
                 throw new ArgumentException("This Contact already exist with the same name and Email");
             }
             Person person = request.ToPerson();
             person.Country =( await _countriesService.GetCountryById(request.CountryId))?.CountryName;
-            
-             CountryResponse? c = (await _countriesService.GetAllCountries()).FirstOrDefault(t => t.CountryName == request.Country);
-            person.CountryID=c?.CountryId;
-            person.Country = c?.CountryName;
+            if(person.CountryID==null)
+            {
+                CountryResponse? c = (await _countriesService.GetAllCountries()).FirstOrDefault(t => t.CountryName == request.Country);
+                person.CountryID = c?.CountryId;
+                person.Country = c?.CountryName;
+            }
+             
            // _personsRepository.Persons.Add(person);
            //await _personsRepository.SaveChangesAsync();
             //_db.sp_AddPerson(person);

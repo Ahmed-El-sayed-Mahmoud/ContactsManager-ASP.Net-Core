@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "FK26JB5zxeMajc0vertluE75+2TtubMQUZbkCjxWMv0=",
+  "Source": "ContactsManager-ASP.Net Core",
+  "BasePath": "_content/ContactsManager-ASP.Net Core",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ContactsManager-ASP.Net Core\\wwwroot",
+      "Source": "ContactsManager-ASP.Net Core",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\",
+      "BasePath": "_content/ContactsManager-ASP.Net Core",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\Rotativa\\wkhtmltopdf.exe",
+      "SourceId": "ContactsManager-ASP.Net Core",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\",
+      "BasePath": "_content/ContactsManager-ASP.Net Core",
+      "RelativePath": "Rotativa/wkhtmltopdf.exe",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\style.css",
+      "SourceId": "ContactsManager-ASP.Net Core",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\",
+      "BasePath": "_content/ContactsManager-ASP.Net Core",
+      "RelativePath": "style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\StyleSheet.css",
+      "SourceId": "ContactsManager-ASP.Net Core",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\",
+      "BasePath": "_content/ContactsManager-ASP.Net Core",
+      "RelativePath": "StyleSheet.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    }
+  ]
+}

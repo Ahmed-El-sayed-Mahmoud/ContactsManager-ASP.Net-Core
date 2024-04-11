@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ContactsManager-ASP.Net Core.props" />
+</Project>

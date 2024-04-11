@@ -1,0 +1,30 @@
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\bin\Debug\net6.0\ServiceContracts.deps.json
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\bin\Debug\net6.0\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\bin\Debug\net6.0\ServiceContracts.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CopyComplete
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\refint\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ServiceContracts.pdb
+C:\Users\user\Desktop\ContactsManager-ASP.Net Core\ServiceContracts\obj\Debug\net6.0\ref\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\bin\Debug\net6.0\ServiceContracts.deps.json
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\bin\Debug\net6.0\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\bin\Debug\net6.0\ServiceContracts.pdb
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.AssemblyInfo.cs
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.csproj.CopyComplete
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\refint\ServiceContracts.dll
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ServiceContracts.pdb
+C:\Users\user\Desktop\ContactsManager\ServiceContracts\obj\Debug\net6.0\ref\ServiceContracts.dll
