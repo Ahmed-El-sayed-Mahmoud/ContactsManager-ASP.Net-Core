@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Entities.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(CountryRepository))]
     [Migration("20240404221106_GetAllPersons_StoredProc")]
     partial class GetAllPersons_StoredProc
     {

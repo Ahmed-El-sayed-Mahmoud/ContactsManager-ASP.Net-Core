@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Entities.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(CountryRepository))]
     [Migration("20240405211118_TIN_Contraint")]
     partial class TIN_Contraint
     {

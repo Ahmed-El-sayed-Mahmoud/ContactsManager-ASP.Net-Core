@@ -18,7 +18,7 @@ namespace TestProject
             DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(
                new DbContextOptionsBuilder<ApplicationDbContext>().Options);
             var dbContext= dbContextMock.Object;
-            _countryService=new CountryServices(dbContext);
+            _countryService=new CountryServices(null);
             dbContextMock.CreateDbSetMock<Country>(t => t.Countries,SeedData);
             _outputHelper = testOutputHelper;
         }

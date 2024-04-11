@@ -5,13 +5,17 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactsManager", "ContactsManager\ContactsManager.csproj", "{6DC038FE-6D01-4297-8232-82C2082FD492}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{19129A6E-9121-475B-8932-145AE66A227B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{19129A6E-9121-475B-8932-145AE66A227B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{5AF8BEF1-77EC-461D-AB60-DC8FA4A82FC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{5AF8BEF1-77EC-461D-AB60-DC8FA4A82FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceContracts", "ServiceContracts\ServiceContracts.csproj", "{91218179-F042-4185-AA0A-DED30561854C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceContracts", "ServiceContracts\ServiceContracts.csproj", "{91218179-F042-4185-AA0A-DED30561854C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{F8955F7A-3E48-41C0-A9CF-980A82929D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{F8955F7A-3E48-41C0-A9CF-980A82929D6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryContracts", "RepositoryContracts\RepositoryContracts.csproj", "{5BC1FF5C-0C20-413D-BAD8-A5D82C562217}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{D2A2532D-A4AD-4BD6-BBA7-1E75F1528CC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{F8955F7A-3E48-41C0-A9CF-980A82929D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8955F7A-3E48-41C0-A9CF-980A82929D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8955F7A-3E48-41C0-A9CF-980A82929D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC1FF5C-0C20-413D-BAD8-A5D82C562217}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC1FF5C-0C20-413D-BAD8-A5D82C562217}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC1FF5C-0C20-413D-BAD8-A5D82C562217}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC1FF5C-0C20-413D-BAD8-A5D82C562217}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2A2532D-A4AD-4BD6-BBA7-1E75F1528CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2A2532D-A4AD-4BD6-BBA7-1E75F1528CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2A2532D-A4AD-4BD6-BBA7-1E75F1528CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2A2532D-A4AD-4BD6-BBA7-1E75F1528CC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
