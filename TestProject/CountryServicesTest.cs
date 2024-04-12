@@ -5,6 +5,9 @@ using Xunit.Abstractions;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using EntityFrameworkCoreMock;
+using Moq;
+using RepositoryContracts;
+using FluentAssertions;
 
 namespace TestProject
 {
@@ -12,14 +15,19 @@ namespace TestProject
     {
         private readonly ICountryServices _countryService;
         private readonly ITestOutputHelper _outputHelper;
+        private readonly Mock<ICountryRepository> _countryRepositoryMock;
         public CountryServicesTest(ITestOutputHelper testOutputHelper)
         {
-            List<Country> SeedData = new List<Country>();
-            DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(
-               new DbContextOptionsBuilder<ApplicationDbContext>().Options);
-            var dbContext= dbContextMock.Object;
-            _countryService=new CountryServices(null);
-            dbContextMock.CreateDbSetMock<Country>(t => t.Countries,SeedData);
+            _countryRepositoryMock = new Mock<ICountryRepository>();
+            ICountryRepository countryRepository = _countryRepositoryMock.Object;
+            _countryService = new CountryServices(countryRepository);
+
+            //List<Country> SeedData = new List<Country>();
+            //DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(
+            //   new DbContextOptionsBuilder<ApplicationDbContext>().Options);
+            //var dbContext= dbContextMock.Object;
+            //_countryService=new CountryServices(countryRepository);
+            //dbContextMock.CreateDbSetMock<Country>(t => t.Countries,SeedData);
             _outputHelper = testOutputHelper;
         }
         #region AddCountry
@@ -42,10 +50,10 @@ namespace TestProject
         public async Task AddCountry_DuplicateCountries()
         {
             AddCountryRequest req1 = new AddCountryRequest() { CountryName = "USA" };
-            AddCountryRequest req2 = new AddCountryRequest() { CountryName = "USA" };
+            _countryRepositoryMock.Setup(t=>t.GetCountryByCountryName(It.IsAny<string>())).ReturnsAsync(req1.ToCountry());
             await Assert.ThrowsAsync<ArgumentException>(async () =>
             {
-                await _countryService.AddCountry(req2);
+                await _countryService.AddCountry(req1);
                 await  _countryService.AddCountry(req1);
             });
         }
@@ -53,6 +61,7 @@ namespace TestProject
         public async Task AddCountry_ProperCountry()
         {
             AddCountryRequest req1 = new AddCountryRequest() { CountryName = "USA" };
+            _countryRepositoryMock.Setup(t => t.AddCountry(It.IsAny<Country>())).ReturnsAsync(1);
             CountryResponse res = await _countryService.AddCountry(req1);
             Assert.True(res.CountryId != Guid.Empty);
         }
@@ -61,25 +70,26 @@ namespace TestProject
         [Fact]
         public async Task GetAllCountries_EmptyList()
         {
-            List<CountryResponse> actual_country_response_list = await _countryService.GetAllCountries();
+            List<Country> list = new List<Country>();
+            _countryRepositoryMock.Setup(t=>t.GetAllCountries()).ReturnsAsync(list);
+            List<CountryResponse> Expected=list.Select(t=>t.ToCountryResponse()).ToList();
+            List<CountryResponse> Actual=await _countryService.GetAllCountries();
 
-            Assert.Empty(actual_country_response_list);
+            Assert.Empty(Actual);
         }
         [Fact]
         public async Task GetAllCountries_Normal()
         {
-            List<AddCountryRequest> testList = new List<AddCountryRequest>() { new AddCountryRequest() { CountryName="USA"},
-            new AddCountryRequest (){ CountryName="EGY"} };
-            List<CountryResponse> ExpectedRes = new List<CountryResponse>();
-            foreach (AddCountryRequest test in testList)
-            {
-                ExpectedRes.Add(await _countryService.AddCountry(test));
-            }
-            List<CountryResponse> actual_country_response = await _countryService.GetAllCountries();
-            foreach (CountryResponse res in actual_country_response)
-            {
-                Assert.Contains(res, ExpectedRes);
-            }
+            List<Country> list = new List<Country>()
+            { 
+                new Country(){CountryName="China" , CountryID=Guid.NewGuid()},
+                new Country(){CountryName="USA" , CountryID=Guid.NewGuid()},
+            };
+            _countryRepositoryMock.Setup(t => t.GetAllCountries()).ReturnsAsync(list);
+            List<CountryResponse> Expected = list.Select(t => t.ToCountryResponse()).ToList();
+            List<CountryResponse> Actual = await _countryService.GetAllCountries();
+
+            Actual.Should().BeEquivalentTo(Expected);
         }
         #endregion
         #region GetCountryById
@@ -98,11 +108,12 @@ namespace TestProject
         [Fact]
         public async Task GetCountryById_Normal()
         {
-            AddCountryRequest addCountryRequest = new AddCountryRequest() { CountryName = "GER" };
-            CountryResponse? Expected = await _countryService.AddCountry(addCountryRequest);
-            _outputHelper.WriteLine(Expected.CountryId.ToString());
-            _outputHelper.WriteLine((await _countryService.GetCountryById(Expected.CountryId))?.CountryId.ToString());
+            Country country = new Country() { CountryName = "China", CountryID = Guid.NewGuid() };
+            _countryRepositoryMock.Setup(t=>t.GetCountryById(It.IsAny<Guid>())).ReturnsAsync(country);
+            CountryResponse? Actual= await _countryService.GetCountryById(country.CountryID);
+            CountryResponse Expected= country.ToCountryResponse();
             Assert.Equal(Expected, await _countryService.GetCountryById(Expected.CountryId));
+            //Actual.Should().Be(Expected);
         }
         #endregion
 

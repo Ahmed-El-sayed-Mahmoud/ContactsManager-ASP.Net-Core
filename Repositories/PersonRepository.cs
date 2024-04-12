@@ -40,7 +40,7 @@ namespace Repositories
             return await _db.Persons.Where(predicate).ToListAsync();
         }
 
-        public async Task<Person> GetPersonById(Guid id)
+        public async Task<Person?>? GetPersonById(Guid id)
         {
             return await _db.Persons.FirstOrDefaultAsync(t => t.PersonID == id);
         }

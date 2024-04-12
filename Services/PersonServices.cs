@@ -15,12 +15,11 @@ namespace Services
 {
     public class PersonServices : IPersonServices
     {
-        private readonly ICountryServices _countriesService;
         private readonly IPersonRepository _personsRepository;
-        public PersonServices(IPersonRepository personRepository,ICountryServices countriesService)
+        public PersonServices(IPersonRepository personRepository)
         {
             _personsRepository = personRepository;
-            _countriesService = countriesService;
+  
         }
 
         public async Task<PersonResponse> AddPerson(AddPersonRequest request)
@@ -34,20 +33,11 @@ namespace Services
                 throw new ArgumentException("This Contact already exist with the same name and Email");
             }
             Person person = request.ToPerson();
-            person.Country =( await _countriesService.GetCountryById(request.CountryId))?.CountryName;
-            if(person.CountryID==null)
-            {
-                CountryResponse? c = (await _countriesService.GetAllCountries()).FirstOrDefault(t => t.CountryName == request.Country);
-                person.CountryID = c?.CountryId;
-                person.Country = c?.CountryName;
-            }
-             
            // _personsRepository.Persons.Add(person);
            //await _personsRepository.SaveChangesAsync();
             //_db.sp_AddPerson(person);
             await _personsRepository.AddPerson(person);
             PersonResponse personResponse = person.ToPersonResponse();
-            personResponse.Country = (await _countriesService.GetCountryById(personResponse.CountryID))?.CountryName;
             return personResponse;
 
         }
@@ -245,8 +235,6 @@ namespace Services
                     if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 4].Value?.ToString()))
                         person.Gender = worksheet.Cells[cur_row, 4].Value?.ToString();
                     
-                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 5].Value?.ToString()))
-                        person.Country = worksheet.Cells[cur_row, 5].Value?.ToString();
                    
                     if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 6].Value?.ToString()))
                         person.Address = worksheet.Cells[cur_row, 6].Value?.ToString();

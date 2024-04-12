@@ -18,7 +18,6 @@ namespace ServiceContracts.DTO
         public string? Gender { get; set; }
         public Guid? CountryId { get; set; }
         public string? Address { get; set; }
-        public string? Country { get; set; } 
         public bool ReceiveNewsLetters { get; set; }
         public Person ToPerson()
         {
@@ -32,7 +31,6 @@ namespace ServiceContracts.DTO
                 PersonName = PersonName?.Trim(),
                 PersonID = Guid.NewGuid(),
                 ReceiveNewsLetters = ReceiveNewsLetters,
-                Country=Country,
 
             };
         }

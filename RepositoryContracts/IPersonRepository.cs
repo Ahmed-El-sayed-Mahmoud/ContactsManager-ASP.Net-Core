@@ -16,7 +16,7 @@ namespace RepositoryContracts
         Task<List<Person>> GetAllPeople();
         Task<List<Person>> GetFiltered(Expression<Func<Person,bool>> expression);
 
-        Task<Person> GetPersonById(Guid id);
+        Task<Person?>? GetPersonById(Guid id);
 
     }
 }
