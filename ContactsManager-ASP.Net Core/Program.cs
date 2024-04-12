@@ -15,8 +15,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 var app = builder.Build();
 if (builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
-Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", "Rotativa");
+if(!builder.Environment.IsEnvironment("Test"))
+    Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", "Rotativa");
 app.UseStaticFiles();
 app.UseRouting();
 app.MapControllers();
 app.Run();
+public partial class Program { }
