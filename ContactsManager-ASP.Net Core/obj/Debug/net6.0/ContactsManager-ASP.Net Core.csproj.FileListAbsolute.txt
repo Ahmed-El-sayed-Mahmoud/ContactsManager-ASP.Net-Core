@@ -166,3 +166,19 @@ C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net
 C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.pdb
 C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ContactsManager-ASP.Net Core.genruntimeconfig.cache
 C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\obj\Debug\net6.0\ref\ContactsManager-ASP.Net Core.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.Azure.Services.AppAuthentication.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\Serilog.Sinks.Seq.dll
+C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\bin\Debug\net6.0\SerilogTimings.dll

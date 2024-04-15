@@ -23,5 +23,10 @@ namespace Entities
         public bool? ReceiveNewsLetters { get; set; }
         public string? TIN { get; set; }
         public virtual Country? country { get; set; }
+        public override string ToString()
+        {
+            return $"{PersonID} , {PersonName} , {Country} , {CountryID} , {country?.CountryName}";
+        }
     }
+    
 }

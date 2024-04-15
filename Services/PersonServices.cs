@@ -2,8 +2,11 @@
 using Entities.Enums;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using OfficeOpenXml;
 using RepositoryContracts;
+using Serilog;
+using SerilogTimings;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using Services.ValidationHelpers;
@@ -16,10 +19,14 @@ namespace Services
     public class PersonServices : IPersonServices
     {
         private readonly IPersonRepository _personsRepository;
-        public PersonServices(IPersonRepository personRepository)
+        private readonly ILogger<PersonServices> _logger;
+        private readonly IDiagnosticContext _diagnosticContext;
+        public PersonServices(IPersonRepository personRepository,ILogger<PersonServices>logger
+            , IDiagnosticContext diagnosticContext)
         {
             _personsRepository = personRepository;
-  
+            _logger = logger;
+            _diagnosticContext = diagnosticContext;
         }
 
         public async Task<PersonResponse> AddPerson(AddPersonRequest request)
@@ -57,35 +64,48 @@ namespace Services
 
         public async Task<List<PersonResponse>> GetAllPeople()
         {
-            // return _db.sp_GetAllPersons().Select(temp=>temp.ToPersonResponse()).ToList();
-            var persons = await _personsRepository.GetAllPeople();
+            List<Person> persons;
+            using (Operation.Time("Time Taken for Getting from DataBase"))
+            {
+                // return _db.sp_GetAllPersons().Select(temp=>temp.ToPersonResponse()).ToList();
+                persons = await _personsRepository.GetAllPeople();
+            }
+
            return persons.Select(t=>t.ToPersonResponse()).ToList();
         }
         public async Task<List<PersonResponse>> GetFiltered(string? SearchString, string? SearchBy)
         {
+            //_logger.LogDebug("Get filtered Personservices is reached");
             SearchString = SearchString?.Trim();
-            List<Person> list = SearchBy switch
+            List<Person> list;
+            using (Operation.Time("Time Taken for Getting from DataBase"))
             {
-                nameof(PersonResponse.PersonName) =>  await _personsRepository.GetFiltered(t =>
-                t.PersonName.Contains(SearchString)),
 
-                nameof(PersonResponse.Email) =>  await _personsRepository.GetFiltered(t =>
-                t.Email.Contains(SearchString)),
 
-                nameof(PersonResponse.DateOfBirth) =>await  _personsRepository.GetFiltered(t =>
-                t.DateOfBirth.Value.ToString("dd MMMM yyyy").Contains(SearchString)),
+                list = SearchBy switch
+                {
+                    nameof(PersonResponse.PersonName) => await _personsRepository.GetFiltered(t =>
+                    t.PersonName.Contains(SearchString)),
 
-                nameof(PersonResponse.Address) => await _personsRepository.GetFiltered(t =>
-                t.Address.Contains(SearchString)),
+                    nameof(PersonResponse.Email) => await _personsRepository.GetFiltered(t =>
+                    t.Email.Contains(SearchString)),
 
-                nameof(PersonResponse.Gender) => await _personsRepository.GetFiltered(t =>
-                t.Gender.Contains(SearchString)),
+                    nameof(PersonResponse.DateOfBirth) => await _personsRepository.GetFiltered(t =>
+                    t.DateOfBirth.Value.ToString("dd MMMM yyyy").Contains(SearchString)),
 
-                nameof(PersonResponse.Country) =>await  _personsRepository.GetFiltered(t =>
-                t.Country.Contains(SearchString)),
+                    nameof(PersonResponse.Address) => await _personsRepository.GetFiltered(t =>
+                    t.Address.Contains(SearchString)),
 
-                _ => await _personsRepository.GetAllPeople()
-            };
+                    nameof(PersonResponse.Gender) => await _personsRepository.GetFiltered(t =>
+                    t.Gender.Contains(SearchString)),
+
+                    nameof(PersonResponse.Country) => await _personsRepository.GetFiltered(t =>
+                    t.Country.Contains(SearchString)),
+
+                    _ => await _personsRepository.GetAllPeople()
+                };
+            }
+            _diagnosticContext.Set("Persons", list);
             return list.Select(t => t.ToPersonResponse()).ToList();
             
         }

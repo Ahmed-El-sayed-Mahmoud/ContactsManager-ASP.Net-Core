@@ -11,6 +11,8 @@ using Services;
 using Xunit.Abstractions;
 using Moq;
 using System.Linq.Expressions;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace TestProject
 {
@@ -38,8 +40,10 @@ namespace TestProject
 
             //dbContextMock.CreateDbSetMock(temp => temp.Countries, countriesInitialData);
             //dbContextMock.CreateDbSetMock(temp => temp.Persons, personsInitialData);
+            Mock<ILogger<PersonServices>>  LoggerMock = new Mock<ILogger<PersonServices>>();
+            Mock<IDiagnosticContext> DiagnosticMock=new Mock<IDiagnosticContext>();
 
-            _personService = new PersonServices(personRepository);
+            _personService = new PersonServices(personRepository,LoggerMock.Object,DiagnosticMock.Object);
 
         }
         #region AddPerson
@@ -133,7 +137,7 @@ namespace TestProject
                 .With(t => t.Gender, "Male")
                 .Create();
             _personRepositoryMock.Setup(t => t.GetPersonById(It.IsAny<Guid>()))
-                                 .ReturnsAsync(person);
+            .ReturnsAsync(person);
             PersonResponse Expected=person.ToPersonResponse();
             PersonResponse? Actual=await _personService.GetPersonById(Guid.NewGuid());
             Assert.Equal(Expected, Actual);

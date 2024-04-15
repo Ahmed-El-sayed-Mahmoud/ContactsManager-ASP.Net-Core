@@ -1,0 +1,68 @@
+2024-04-15 08:30:17.086 +02:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-15 08:30:17.165 +02:00 [INF] Now listening on: https://localhost:7281
+2024-04-15 08:30:17.167 +02:00 [INF] Now listening on: http://localhost:5134
+2024-04-15 08:30:17.169 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-15 08:30:17.169 +02:00 [INF] Hosting environment: Development
+2024-04-15 08:30:17.170 +02:00 [INF] Content root path: C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\
+2024-04-15 08:30:17.406 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7281/ - -
+2024-04-15 08:30:17.423 +02:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+2024-04-15 08:30:17.440 +02:00 [INF] Executing endpoint 'ContactsManager.Controllers.ContactsController.Index (ContactsManager-ASP.Net Core)'
+2024-04-15 08:30:17.468 +02:00 [INF] Route matched with {action = "Index", controller = "Contacts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, System.String) on controller ContactsManager.Controllers.ContactsController (ContactsManager-ASP.Net Core).
+2024-04-15 08:30:18.065 +02:00 [INF] Entity Framework Core 6.0.5 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+2024-04-15 08:30:18.412 +02:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Country], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TIN], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2024-04-15 08:30:18.477 +02:00 [INF] Executing ViewResult, running view Index.
+2024-04-15 08:30:18.577 +02:00 [INF] Executed ViewResult - view Index executed in 100.165ms.
+2024-04-15 08:30:18.581 +02:00 [INF] Executed action ContactsManager.Controllers.ContactsController.Index (ContactsManager-ASP.Net Core) in 1111.7346ms
+2024-04-15 08:30:18.582 +02:00 [INF] Executed endpoint 'ContactsManager.Controllers.ContactsController.Index (ContactsManager-ASP.Net Core)'
+2024-04-15 08:30:18.583 +02:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Mon, 15 Apr 2024 06:30:18 GMT
+Server: Kestrel
+2024-04-15 08:30:18.594 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - -
+2024-04-15 08:30:18.594 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_vs/browserLink - -
+2024-04-15 08:30:18.594 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7281/ - - - 200 - text/html;+charset=utf-8 1189.9795ms
+2024-04-15 08:30:18.596 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - - - 200 12388 application/javascript;+charset=utf-8 2.3571ms
+2024-04-15 08:30:18.600 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 6.8933ms
+2024-04-15 08:51:09.126 +02:00 [INF] User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-15 08:51:09.212 +02:00 [INF] Now listening on: https://localhost:7281
+2024-04-15 08:51:09.213 +02:00 [INF] Now listening on: http://localhost:5134
+2024-04-15 08:51:09.215 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-15 08:51:09.216 +02:00 [INF] Hosting environment: Development
+2024-04-15 08:51:09.216 +02:00 [INF] Content root path: C:\Users\user\Desktop\ContactsManager\ContactsManager-ASP.Net Core\
+2024-04-15 08:51:09.770 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7281/ - -
+2024-04-15 08:51:09.786 +02:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+2024-04-15 08:51:09.801 +02:00 [INF] Executing endpoint 'ContactsManager.Controllers.ContactsController.Index (ContactsManager-ASP.Net Core)'
+2024-04-15 08:51:09.827 +02:00 [INF] Route matched with {action = "Index", controller = "Contacts"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, System.String) on controller ContactsManager.Controllers.ContactsController (ContactsManager-ASP.Net Core).
+2024-04-15 08:51:10.375 +02:00 [INF] Entity Framework Core 6.0.5 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.5' with options: None
+2024-04-15 08:51:10.573 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[Country], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TIN], [c].[CountryID], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2024-04-15 08:51:10.635 +02:00 [INF] Executing ViewResult, running view Index.
+2024-04-15 08:51:10.739 +02:00 [INF] Executed ViewResult - view Index executed in 103.5557ms.
+2024-04-15 08:51:10.741 +02:00 [INF] Executed action ContactsManager.Controllers.ContactsController.Index (ContactsManager-ASP.Net Core) in 911.4649ms
+2024-04-15 08:51:10.742 +02:00 [INF] Executed endpoint 'ContactsManager.Controllers.ContactsController.Index (ContactsManager-ASP.Net Core)'
+2024-04-15 08:51:10.743 +02:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Mon, 15 Apr 2024 06:51:10 GMT
+Server: Kestrel
+2024-04-15 08:51:10.753 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7281/ - - - 200 - text/html;+charset=utf-8 985.0333ms
+2024-04-15 08:51:10.773 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - -
+2024-04-15 08:51:10.773 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7281/_vs/browserLink - -
+2024-04-15 08:51:10.775 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_framework/aspnetcore-browser-refresh.js - - - 200 12388 application/javascript;+charset=utf-8 2.1916ms
+2024-04-15 08:51:10.780 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7281/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 7.2107ms
