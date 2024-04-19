@@ -1,10 +1,17 @@
-﻿using Entities.Enums;
+﻿using ContactsManager_ASP.Net_Core.Filters;
+using ContactsManager_ASP.Net_Core.Filters.ActionFilters;
+using ContactsManager_ASP.Net_Core.Filters.AuthorizationFilters;
+using ContactsManager_ASP.Net_Core.Filters.ExceptionFilters;
+using ContactsManager_ASP.Net_Core.Filters.ResultFilters;
+using Entities.Enums;
 using Microsoft.AspNetCore.Mvc;
 using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 namespace ContactsManager.Controllers
 {
+    [TypeFilter(typeof(HandlingExceptionFilter))]
+    [TypeFilter(typeof(TokenAuth))]
     public class ContactsController : Controller
     {
         private readonly IPersonServices _personServices;
@@ -15,30 +22,24 @@ namespace ContactsManager.Controllers
             _countryServices = countryServices;
         }
         [Route("/")]
-        [Route("~/Index")]
-        public async Task<IActionResult> Index(string searchBy, string searchText, string SortBy = nameof(PersonResponse.PersonName)
+        [Route("/Index")]
+        [TypeFilter(typeof(TokenResultFilter))]
+        [SkipFilter]
+        [TypeFilter(typeof(PersonsActionFilter), Order =-1)]
+        [ResponseHeadersActionFilter("myKey","myValue",2)]
+        public async Task<IActionResult> Index(string searchBy, string searchText, string sortBy = nameof(PersonResponse.PersonName)
             , string sortOrderOptions = "ASC")
         {
-            ViewBag.SearchFields = new Dictionary<string, string>()
-            {
-                { nameof(PersonResponse.PersonName), "Person Name" },
-                { nameof(PersonResponse.Email), "Email" },
-                { nameof(PersonResponse.DateOfBirth), "Date of Birth" },
-                { nameof(PersonResponse.Gender), "Gender" },
-                { nameof(PersonResponse.CountryID), "Country" },
-                { nameof(PersonResponse.Address), "Address" }
-            };
-            ViewBag.CurrentSearchText = searchText;
-            ViewBag.CurrentSearchBy = searchBy;
-            ViewBag.SortBy = SortBy;
-            ViewBag.SortOrderOptions = sortOrderOptions;
+        
             List<PersonResponse> persons = await _personServices.GetFiltered(searchText, searchBy);
-            List<PersonResponse> SortedList = await _personServices.GetSortedPersons(persons, SortBy,
+            List<PersonResponse> SortedList = await _personServices.GetSortedPersons(persons, sortBy,
                 (SortOrderOptions)Enum.Parse<SortOrderOptions>(sortOrderOptions));
             return View(SortedList);
         }
         [HttpGet]
         [Route("~/Create")]
+        // [TypeFilter(typeof(FeatureDisableResourceFilter))]
+      
         public async Task<IActionResult> CreateContact()
         {
             //_personServices.AddPerson(request);
@@ -49,15 +50,11 @@ namespace ContactsManager.Controllers
 
         [Route("~/Create")]
         [HttpPost]
+        [TypeFilter(typeof(PersonsAddEditActionFilter))]
+        
         public async Task<IActionResult> CreateContact(AddPersonRequest request)
         {
-            if (!ModelState.IsValid)
-            {
-                List<CountryResponse> countries = await _countryServices.GetAllCountries();
-                ViewBag.Countries = countries;
-                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
-                return View(request);
-            }
+           
             await _personServices.AddPerson(request);
             return RedirectToAction("Index");
         }

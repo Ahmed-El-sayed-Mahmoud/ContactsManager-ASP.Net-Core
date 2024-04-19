@@ -76,6 +76,8 @@ namespace Services
         public async Task<List<PersonResponse>> GetFiltered(string? SearchString, string? SearchBy)
         {
             //_logger.LogDebug("Get filtered Personservices is reached");
+            if(string.IsNullOrWhiteSpace(SearchString))
+                SearchString=string.Empty;
             SearchString = SearchString?.Trim();
             List<Person> list;
             using (Operation.Time("Time Taken for Getting from DataBase"))

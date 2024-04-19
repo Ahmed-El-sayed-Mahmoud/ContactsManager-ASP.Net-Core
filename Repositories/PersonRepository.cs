@@ -41,7 +41,7 @@ namespace Repositories
 
         public async Task<List<Person>> GetFiltered(Expression<Func<Person, bool>>predicate)
         {
-            return await _db.Persons.Where(predicate).ToListAsync();
+            return await _db.Persons.Where(predicate).Include("country").ToListAsync();
         }
 
         public async Task<Person?>? GetPersonById(Guid id)

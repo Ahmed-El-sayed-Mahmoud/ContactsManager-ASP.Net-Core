@@ -9,6 +9,18 @@
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\jquery.min.js",
+      "PackagePath": "staticwebassets\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\jquery.validate.unobtrusive.min.js"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\style.css",
       "PackagePath": "staticwebassets\\style.css"
     },
