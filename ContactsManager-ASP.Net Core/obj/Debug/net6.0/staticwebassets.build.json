@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Yv0Whep5HLZ0FBiXDq9m0W6Bk5JHrkfjjgt8E5kr0nQ=",
+  "Hash": "Jp3KO3smvMsK7v8nrPq4vDIu1qcl6A5oghjpiBi6sGc=",
   "Source": "ContactsManager-ASP.Net Core",
   "BasePath": "_content/ContactsManager-ASP.Net Core",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\error.svg",
+      "SourceId": "ContactsManager-ASP.Net Core",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\",
+      "BasePath": "_content/ContactsManager-ASP.Net Core",
+      "RelativePath": "error.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\error.svg"
+    },
     {
       "Identity": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\wwwroot\\jquery.min.js",
       "SourceId": "ContactsManager-ASP.Net Core",

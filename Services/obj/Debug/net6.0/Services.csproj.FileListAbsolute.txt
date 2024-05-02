@@ -36,3 +36,5 @@ C:\Users\user\Desktop\ContactsManager\Services\obj\Debug\net6.0\Services.dll
 C:\Users\user\Desktop\ContactsManager\Services\obj\Debug\net6.0\refint\Services.dll
 C:\Users\user\Desktop\ContactsManager\Services\obj\Debug\net6.0\Services.pdb
 C:\Users\user\Desktop\ContactsManager\Services\obj\Debug\net6.0\ref\Services.dll
+C:\Users\user\Desktop\ContactsManager\Services\bin\Debug\net6.0\Exceptions.dll
+C:\Users\user\Desktop\ContactsManager\Services\bin\Debug\net6.0\Exceptions.pdb

@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Entities.Enums;
+using Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -170,7 +171,7 @@ namespace Services
             ValidationHelper.ModelValidator(personUpdateRequest);
             Person? person = await _personsRepository.GetPersonById(personUpdateRequest.PersonId);
             if (person == null)
-                throw new ArgumentException("This ID does not exist in your Contacts");
+                throw new InvalidIDException("This ID does not exist in your Contacts");
             person.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
 
             person.Gender = personUpdateRequest.Gender;

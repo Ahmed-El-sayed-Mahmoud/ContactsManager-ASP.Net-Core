@@ -7,6 +7,7 @@ using Services;
 using Serilog;
 using ContactsManager_ASP.Net_Core.Filters.ActionFilters;
 using ContactsManager_ASP.Net_Core;
+using ContactsManager_ASP.Net_Core.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Host.ConfigureLogging(logging =>
@@ -23,10 +24,17 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
 });
 builder.Services.ConfigureServices(builder.Configuration);
 var app = builder.Build();
-app.UseSerilogRequestLogging(); // for IDiagnosticContext to add log at the last log of a request
-app.UseHttpLogging();
 if (builder.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
+else
+{
+	app.UseExceptionHandlingMiddleware();
+    app.UseExceptionHandler("/Error");
+}
+   
+app.UseSerilogRequestLogging(); // for IDiagnosticContext to add log at the last log of a request
+app.UseHttpLogging();
+
 if(!builder.Environment.IsEnvironment("Test"))
     Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", "Rotativa");
 app.UseStaticFiles();
