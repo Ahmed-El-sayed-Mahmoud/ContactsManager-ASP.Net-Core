@@ -13,14 +13,20 @@ using Moq;
 using System.Linq.Expressions;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using Exceptions;
 
 namespace TestProject
 {
     public class PersonServicesTest
     {
         private readonly ITestOutputHelper _outputHelper;
-        private readonly IPersonServices _personService;
-        private readonly IFixture fixture;
+        private readonly IPersonGetterServices _personGetterService;
+		private readonly IPersonAdderServices _personAdderService;
+		private readonly IPersonDeleterServices _personDeleterService;
+		private readonly IPersonUpdaterServices _personUpdaterService;
+		private readonly IPersonUploaderServices _personUploaderService;
+		private readonly IPersonSorterServices _personSorterService;
+		private readonly IFixture fixture;
         private readonly Mock<IPersonRepository> _personRepositoryMock;
         public PersonServicesTest(ITestOutputHelper testOutputHelper)
         {
@@ -40,12 +46,18 @@ namespace TestProject
 
             //dbContextMock.CreateDbSetMock(temp => temp.Countries, countriesInitialData);
             //dbContextMock.CreateDbSetMock(temp => temp.Persons, personsInitialData);
-            Mock<ILogger<PersonServices>>  LoggerMock = new Mock<ILogger<PersonServices>>();
+            Mock<ILogger<PersonGetterServices>>  LoggerMock = new Mock<ILogger<PersonGetterServices>>();
             Mock<IDiagnosticContext> DiagnosticMock=new Mock<IDiagnosticContext>();
 
-            _personService = new PersonServices(personRepository,LoggerMock.Object,DiagnosticMock.Object);
+            _personGetterService = new PersonGetterServices(personRepository,LoggerMock.Object,DiagnosticMock.Object);
+			_personAdderService = new PersonAdderServices(personRepository, LoggerMock.Object, DiagnosticMock.Object);
+			_personUpdaterService = new PersonUpdaterServices(personRepository, LoggerMock.Object, DiagnosticMock.Object);
+			_personUploaderService = new PersonUploaderServices(personRepository, LoggerMock.Object, DiagnosticMock.Object,_personAdderService);
+			_personDeleterService = new PersonDeleterServices(personRepository, LoggerMock.Object, DiagnosticMock.Object);
+			_personSorterService = new PersonSorterServices(personRepository, LoggerMock.Object, DiagnosticMock.Object);
+		
 
-        }
+		}
         #region AddPerson
         [Fact]
         public async Task AddPerson_NullPerson()
@@ -57,7 +69,7 @@ namespace TestProject
             //});
             Func<Task> action = async () =>
             {
-                await _personService.AddPerson(addPersonRequest);
+                await _personAdderService.AddPerson(addPersonRequest);
             };
             await action.Should().ThrowAsync<ArgumentNullException>();
         }
@@ -71,7 +83,7 @@ namespace TestProject
             //});
             Func<Task> action = async () =>
             {
-                await _personService.AddPerson(addPersonRequest);
+                await _personAdderService.AddPerson(addPersonRequest);
             };
             await action.Should().ThrowAsync<ArgumentException>();
         }
@@ -93,8 +105,8 @@ namespace TestProject
             ////});
             Func<Task> action = async () =>
             {
-                await _personService.AddPerson(addPersonRequest1);
-                await _personService.AddPerson(addPersonRequest1);
+                await _personAdderService.AddPerson(addPersonRequest1);
+                await _personAdderService.AddPerson(addPersonRequest1);
             };
             await action.Should().ThrowAsync<ArgumentException>();
         }
@@ -108,7 +120,7 @@ namespace TestProject
             _personRepositoryMock.Setup(t => t.AddPerson(It.IsAny<Person>()))
                                  .ReturnsAsync(1);
 
-            PersonResponse response = await _personService.AddPerson(addPersonRequest);
+            PersonResponse response = await _personAdderService.AddPerson(addPersonRequest);
             //Assert.True(response.PersonID != Guid.Empty && response.PersonName != string.Empty && response.Email != String.Empty);
             response.PersonID.Should().NotBe(Guid.Empty);
         }
@@ -123,7 +135,7 @@ namespace TestProject
             //});
             Func<Task> action =(async () =>
             {
-                await _personService.GetPersonById(Guid.Empty);
+                await _personGetterService.GetPersonById(Guid.Empty);
             });
            await action.Should().ThrowAsync<ArgumentException>();
         }
@@ -139,7 +151,7 @@ namespace TestProject
             _personRepositoryMock.Setup(t => t.GetPersonById(It.IsAny<Guid>()))
             .ReturnsAsync(person);
             PersonResponse Expected=person.ToPersonResponse();
-            PersonResponse? Actual=await _personService.GetPersonById(Guid.NewGuid());
+            PersonResponse? Actual=await _personGetterService.GetPersonById(Guid.NewGuid());
             Assert.Equal(Expected, Actual);
             //personResponse_Add.Should().Be(personResponse_Get);
         }
@@ -150,7 +162,7 @@ namespace TestProject
         {
           
             _personRepositoryMock.Setup(t=>t.GetAllPeople()).ReturnsAsync(new List<Person>());
-            List<PersonResponse> Actual = await _personService.GetAllPeople();
+            List<PersonResponse> Actual = await _personGetterService.GetAllPeople();
             //Assert.Empty(AllContacts);
             Actual.Should().BeEmpty();
         }
@@ -164,7 +176,7 @@ namespace TestProject
             };
             _personRepositoryMock.Setup(t => t.GetAllPeople()).ReturnsAsync(list);
             List<PersonResponse> Expected = list.Select(t => t.ToPersonResponse()).ToList();
-            List<PersonResponse> Actual = await _personService.GetAllPeople();
+            List<PersonResponse> Actual = await _personGetterService.GetAllPeople();
             //Assert.Empty(AllContacts);
             Actual.Should().BeEquivalentTo(Expected);
         }
@@ -181,7 +193,7 @@ namespace TestProject
             };
             _personRepositoryMock.Setup(t=>t.GetFiltered(It.IsAny<Expression<Func<Person,bool>>>())).ReturnsAsync(list);
             List<PersonResponse> Expected = list.Select(t => t.ToPersonResponse()).ToList();
-            List<PersonResponse> Actual = await _personService.GetFiltered("",nameof(Person.Email));
+            List<PersonResponse> Actual = await _personGetterService.GetFiltered("",nameof(Person.Email));
             //Assert.Empty(AllContacts);
             Actual.Should().BeEquivalentTo(Expected);
         }
@@ -197,7 +209,7 @@ namespace TestProject
             List<Person> Expected = list.Where(t => t.Email.Contains("someone", StringComparison.OrdinalIgnoreCase)).ToList();
             _personRepositoryMock.Setup(t => t.GetFiltered(It.IsAny<Expression<Func<Person, bool>>>())).ReturnsAsync(Expected);
             List<PersonResponse>ExpectedResponse=Expected.Select(t=>t.ToPersonResponse()).ToList();
-            List<PersonResponse> Actual = await _personService.GetFiltered("someone",nameof(Person.Email));
+            List<PersonResponse> Actual = await _personGetterService.GetFiltered("someone",nameof(Person.Email));
             //Assert.Empty(AllContacts);
             Actual.Should().BeEquivalentTo(ExpectedResponse);
            
@@ -211,9 +223,9 @@ namespace TestProject
             UpdatePersonRequest updatePersonRequest = fixture.Build<UpdatePersonRequest>()
                                                      .With(t => t.PersonId, Guid.Empty)
                                                      .With(t=>t.Email,"ash@gmail.com").Create();
-            await Assert.ThrowsAsync<ArgumentException>(async () =>
+            await Assert.ThrowsAsync<InvalidIDException>(async () =>
             {
-                await _personService.UpdatePerson(updatePersonRequest);
+                await _personUpdaterService.UpdatePerson(updatePersonRequest);
             });
 
         }
@@ -224,9 +236,9 @@ namespace TestProject
                                                      .With(t => t.Email, "ash@gmail.com").Create();
             Person? person=null;
             _personRepositoryMock.Setup(t => t.GetPersonById(It.IsAny<Guid>())).ReturnsAsync(person);
-            await Assert.ThrowsAsync<ArgumentException>(async () =>
+            await Assert.ThrowsAsync<InvalidIDException>(async () =>
             {
-                await _personService.UpdatePerson(updatePersonRequest);
+                await _personUpdaterService.UpdatePerson(updatePersonRequest);
             });
 
         }
@@ -240,7 +252,7 @@ namespace TestProject
             _personRepositoryMock.Setup(t => t.GetPersonById(It.IsAny<Guid>())).ReturnsAsync(person);
             _personRepositoryMock.Setup(t => t.UpdatePerson(It.IsAny<Person>())).ReturnsAsync(1);
             PersonResponse Expected=person.ToPersonResponse();
-            PersonResponse Actual = await _personService.UpdatePerson(updatePersonRequest);
+            PersonResponse Actual = await _personUpdaterService.UpdatePerson(updatePersonRequest);
             Assert.Equal(Expected,Actual );
            // personResponse_fromGet.Should().Be(personResponse_fromUpdate);
 

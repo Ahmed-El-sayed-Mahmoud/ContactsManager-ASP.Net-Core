@@ -27,7 +27,12 @@ namespace ContactsManager_ASP.Net_Core
 			services.AddScoped<IPersonRepository, PersonRepository>();
 			services.AddScoped<ICountryRepository, CountryRepository>();
 			services.AddScoped<ICountryServices, CountryServices>();
-			services.AddScoped<IPersonServices, PersonServices>();
+			services.AddScoped<IPersonGetterServices, PersonGetterServices>();
+			services.AddScoped<IPersonAdderServices, PersonAdderServices>();
+			services.AddScoped<IPersonUploaderServices, PersonUploaderServices>();
+			services.AddScoped<IPersonDeleterServices, PersonDeleterServices>();
+			services.AddScoped<IPersonSorterServices, PersonSorterServices>();
+			services.AddScoped<IPersonUpdaterServices, PersonUpdaterServices>();
 			services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configurationManager.GetConnectionString("DefaultConnection")));
 		}
 	}

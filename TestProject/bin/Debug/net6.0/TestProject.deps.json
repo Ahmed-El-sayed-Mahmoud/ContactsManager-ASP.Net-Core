@@ -36,6 +36,7 @@
         "dependencies": {
           "AutoFixture": "4.17.0",
           "EntityFrameworkCoreMock.Moq": "2.4.0",
+          "Exceptions": "1.0.0",
           "Fizzler": "1.3.0",
           "Fizzler.Systems.HtmlAgilityPack": "1.2.1",
           "FluentAssertions": "6.12.0",
@@ -2723,6 +2724,7 @@
       "xunit.runner.visualstudio/2.4.5": {},
       "ContactsManager-ASP.Net Core/1.0.0": {
         "dependencies": {
+          "Exceptions": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
           "Repositories": "1.0.0",
           "RepositoryContracts": "1.0.0",
@@ -2750,6 +2752,14 @@
         },
         "compile": {
           "Entities.dll": {}
+        }
+      },
+      "Exceptions/1.0.0": {
+        "runtime": {
+          "Exceptions.dll": {}
+        },
+        "compile": {
+          "Exceptions.dll": {}
         }
       },
       "Repositories/1.0.0": {
@@ -2790,6 +2800,7 @@
       "Services/1.0.0": {
         "dependencies": {
           "EPPlus": "7.1.0",
+          "Exceptions": "1.0.0",
           "RepositoryContracts": "1.0.0",
           "Serilog.Extensions.Hosting": "5.0.1",
           "SerilogTimings": "3.1.0",
@@ -5965,6 +5976,11 @@
       "sha512": ""
     },
     "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Exceptions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

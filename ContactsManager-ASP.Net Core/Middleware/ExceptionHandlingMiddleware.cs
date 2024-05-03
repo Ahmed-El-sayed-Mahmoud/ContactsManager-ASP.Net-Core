@@ -36,7 +36,7 @@ namespace ContactsManager_ASP.Net_Core.Middleware
 				}
 				//httpContext.Response.StatusCode = 500;
 				//await httpContext.Response.WriteAsync("Error occurred");
-				//throw;
+				throw;
 			}
 		}
 	}

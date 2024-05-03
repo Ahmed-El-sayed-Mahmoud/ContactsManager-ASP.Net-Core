@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Persons</title>
+    <link href="/Stylesheet.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="page-content">
+
+            <div class="margin-bottom">
+                <div class="flex" id="top-bar-div">
+                    <div class="flex-1" id="app-title-div">
+                        <h1 class="app-title">
+                            <i class="fa-solid fa-people-simple"></i>
+                            Contacts Manager
+                        </h1>
+                    </div>
+
+
+                    <div class="flex-1 pr" id="search-box-div">
+                        <div class="navbar account-links">
+
+                            <ul>
+                                <li>
+                                    <a href="">Register</a>
+                                    <a href="">Login</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="navbar mb">
+
+                <ul>
+                    <li>
+                        <a href="/Index">Persons</a>
+                        <a href="/UploadExcel">Upload Contacts</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="body">
+                ﻿
+<form method="get" action="/Index">
+
+    <!-- breadcrumb starts -->
+    <div class="flex">
+        <div class="flex-1">
+            <div class="text-grey">
+                <span>Contacts</span>
+                <i class="fa-solid fa-caret-right"></i>
+                <span class="text-grey">Persons</span>
+            </div>
+        </div>
+
+        <div class="flex-1 text-right">
+            <a class="button-link button-blue-back" href="/Create">Create Person</a>
+
+            <a class="button-link button-blue-back ml" href="/personsPDF">Download as PDF</a>
+
+
+            <a class="button-link button-blue-back ml" href="/personsExcel">Download as Excel</a>
+        </div>
+    </div>
+    <!-- breadcrumb endds -->
+
+    <div class="table-container">
+        <div class="flex">
+            <div class="flex-1">
+                <h1>Contacts</h1>
+            </div>
+            <div class="flex-3 text-right">
+                <label>Search by:</label>
+
+                <select class="search-dropdown" name="searchBy" style="width: 200px">
+                            <option value="PersonName" selected="selected">Person Name</option>
+                            <option value="Email">Email</option>
+                            <option value="DateOfBirth">Date of Birth</option>
+                            <option value="Gender">Gender</option>
+                            <option value="CountryID">Country</option>
+                            <option value="Address">Address</option>
+                </select>
+
+                <input type="search" id="Search" class="search-text" placeholder="Search" name="searchText" style="width:200px" />
+
+                <button class="search-button">Search</button>
+
+                <a class="ml link-hover" href="/Index">Clear all</a>
+            </div>
+        </div>
+
+
+
+        <table class="table w-100 mt persons">
+
+            <thead>
+                <tr>
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=PersonName&sortOrderOptions=ASC">Person Name</a>
+ </th>
+
+
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=Email&sortOrderOptions=ASC">Email</a>
+ </th>
+
+
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=DateOfBirth&sortOrderOptions=ASC">Date of Birth</a>
+ </th>
+
+
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=Age&sortOrderOptions=ASC">Age</a>
+ </th>
+
+
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=Gender&sortOrderOptions=ASC">Gender</a>
+ </th>
+
+
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=Country&sortOrderOptions=ASC">Country</a>
+ </th>
+
+
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=Address&sortOrderOptions=ASC">Address</a>
+ </th>
+
+
+                     <th>
+		<a href="/index?searchBy=PersonName&searchString=&sortBy=ReceiveNewsLetters&sortOrderOptions=ASC">Receive News Letters</a>
+ </th>
+
+
+                    <th>Options</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+</form>
+
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

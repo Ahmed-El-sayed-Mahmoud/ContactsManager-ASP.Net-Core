@@ -17,50 +17,17 @@ using LicenseContext = OfficeOpenXml.LicenseContext;
 
 namespace Services
 {
-    public class PersonServices : IPersonServices
+    public class PersonGetterServices : IPersonGetterServices
     {
         private readonly IPersonRepository _personsRepository;
-        private readonly ILogger<PersonServices> _logger;
+        private readonly ILogger<PersonGetterServices> _logger;
         private readonly IDiagnosticContext _diagnosticContext;
-        public PersonServices(IPersonRepository personRepository,ILogger<PersonServices>logger
+        public PersonGetterServices(IPersonRepository personRepository,ILogger<PersonGetterServices>logger
             , IDiagnosticContext diagnosticContext)
         {
             _personsRepository = personRepository;
             _logger = logger;
             _diagnosticContext = diagnosticContext;
-        }
-
-        public async Task<PersonResponse> AddPerson(AddPersonRequest request)
-        {
-            if (request == null) throw new ArgumentNullException(nameof(request));
-            ValidationHelper.ModelValidator(request);
-            Person? dub = (await _personsRepository.GetAllPeople())?.FirstOrDefault(temp => temp.PersonName == request.PersonName!.Trim() && temp.Email == request.Email!.Trim());
-
-            if (dub!=null)
-            {
-                throw new ArgumentException("This Contact already exist with the same name and Email");
-            }
-            Person person = request.ToPerson();
-           // _personsRepository.Persons.Add(person);
-           //await _personsRepository.SaveChangesAsync();
-            //_db.sp_AddPerson(person);
-            await _personsRepository.AddPerson(person);
-            PersonResponse personResponse = person.ToPersonResponse();
-            return personResponse;
-
-        }
-
-        public async Task<bool> DeletePerson(Guid? ID)
-        {
-            if (ID == null) throw new ArgumentNullException();
-            if (ID == Guid.Empty) throw new ArgumentNullException(nameof(ID));
-            Person? person =await  _personsRepository.GetPersonById( ID.Value);
-            if (person == null)
-            {
-                return false;
-            }
-            await _personsRepository.DeletePerson(ID.Value);
-            return true;
         }
 
         public async Task<List<PersonResponse>> GetAllPeople()
@@ -164,26 +131,6 @@ namespace Services
             return sortedPersons;
         }
 
-        public async Task<PersonResponse> UpdatePerson(UpdatePersonRequest? personUpdateRequest)
-        {
-            if (personUpdateRequest == null)
-                throw new ArgumentNullException(nameof(personUpdateRequest));
-            ValidationHelper.ModelValidator(personUpdateRequest);
-            Person? person = await _personsRepository.GetPersonById(personUpdateRequest.PersonId);
-            if (person == null)
-                throw new InvalidIDException("This ID does not exist in your Contacts");
-            person.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;
-
-            person.Gender = personUpdateRequest.Gender;
-            person.Email = personUpdateRequest.Email;
-            person.DateOfBirth = personUpdateRequest.DateOfBirth;
-            person.Address = personUpdateRequest.Address;
-            person.CountryID = personUpdateRequest.CountryId;
-           await  _personsRepository.UpdatePerson(person);
-
-            return person.ToPersonResponse();
-
-        }
         public async Task<MemoryStream> GetPersonsExcel()
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -223,58 +170,5 @@ namespace Services
             return memoryStream;
         }
 
-        public async Task<int> UploadExcelFile(IFormFile formFile)
-        {
-            MemoryStream memoryStream = new MemoryStream();
-            await formFile.CopyToAsync(memoryStream);
-            int PersonsAdded = 0;
-            using(var package=new ExcelPackage(memoryStream))
-            {
-                ExcelWorksheet worksheet = package.Workbook.Worksheets["persons"];
-                if(worksheet==null)
-                {
-                    return 0;
-                }
-                int rowsCount = worksheet.Rows.Count();
-                if (rowsCount == 0)
-                    return 0;
-                
-                for(int cur_row = 2; cur_row<=rowsCount; cur_row++)
-                {
-                    AddPersonRequest person=new AddPersonRequest();
-                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 1].Value?.ToString()))
-                        person.PersonName = worksheet.Cells[cur_row, 1].Value?.ToString();
-                    else
-                        continue;
-                    
-                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 2].Value?.ToString()))
-                        person.Email = worksheet.Cells[cur_row, 2].Value?.ToString();
-                    else 
-                        continue;
-                    
-                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 3].Value?.ToString()))
-                        person.DateOfBirth =Convert.ToDateTime( worksheet.Cells[cur_row, 3].Value);
-                   
-                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 4].Value?.ToString()))
-                        person.Gender = worksheet.Cells[cur_row, 4].Value?.ToString();
-                    
-                   
-                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 6].Value?.ToString()))
-                        person.Address = worksheet.Cells[cur_row, 6].Value?.ToString();
-
-                    if (!string.IsNullOrEmpty(worksheet.Cells[cur_row, 7].Value?.ToString()))
-                        person.ReceiveNewsLetters = Convert.ToBoolean(worksheet.Cells[cur_row, 7].Value);
-
-
-                    if(await _personsRepository.GetFiltered(t => t.Email == person.Email && t.PersonName == person.PersonName)==null)
-                    {
-                        //await AddPerson(person);
-                        await AddPerson(person);
-                        PersonsAdded++;
-                    }
-                }
-            }
-            return PersonsAdded;
-        }
     }
 }

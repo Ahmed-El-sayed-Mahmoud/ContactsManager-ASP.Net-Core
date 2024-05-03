@@ -11063,6 +11063,7 @@
       "AutoFixture >= 4.17.0",
       "ContactsManager-ASP.Net Core >= 1.0.0",
       "EntityFrameworkCoreMock.Moq >= 2.4.0",
+      "Exceptions >= 1.0.0",
       "Fizzler >= 1.3.0",
       "Fizzler.Systems.HtmlAgilityPack >= 1.2.1",
       "FluentAssertions >= 6.12.0",
@@ -11112,6 +11113,9 @@
           "projectReferences": {
             "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\ContactsManager-ASP.Net Core.csproj": {
               "projectPath": "C:\\Users\\user\\Desktop\\ContactsManager\\ContactsManager-ASP.Net Core\\ContactsManager-ASP.Net Core.csproj"
+            },
+            "C:\\Users\\user\\Desktop\\ContactsManager\\Exceptions\\Exceptions.csproj": {
+              "projectPath": "C:\\Users\\user\\Desktop\\ContactsManager\\Exceptions\\Exceptions.csproj"
             },
             "C:\\Users\\user\\Desktop\\ContactsManager\\ServiceContracts\\ServiceContracts.csproj": {
               "projectPath": "C:\\Users\\user\\Desktop\\ContactsManager\\ServiceContracts\\ServiceContracts.csproj"

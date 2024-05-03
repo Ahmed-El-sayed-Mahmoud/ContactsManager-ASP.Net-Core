@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ContactsManager-ASP.Net Core\ContactsManager-ASP.Net Core.csproj" />
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj" />
     <ProjectReference Include="..\ServiceContracts\ServiceContracts.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>

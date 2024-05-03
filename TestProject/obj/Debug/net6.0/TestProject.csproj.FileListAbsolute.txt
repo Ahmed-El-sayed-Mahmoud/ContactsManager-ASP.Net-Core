@@ -480,3 +480,5 @@ C:\Users\user\Desktop\ContactsManager\TestProject\bin\Debug\net6.0\Serilog.Sinks
 C:\Users\user\Desktop\ContactsManager\TestProject\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\user\Desktop\ContactsManager\TestProject\bin\Debug\net6.0\Serilog.Sinks.Seq.dll
 C:\Users\user\Desktop\ContactsManager\TestProject\bin\Debug\net6.0\SerilogTimings.dll
+C:\Users\user\Desktop\ContactsManager\TestProject\bin\Debug\net6.0\Exceptions.dll
+C:\Users\user\Desktop\ContactsManager\TestProject\bin\Debug\net6.0\Exceptions.pdb

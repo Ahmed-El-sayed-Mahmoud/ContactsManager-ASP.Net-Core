@@ -14,12 +14,25 @@ namespace ContactsManager.Controllers
     [TypeFilter(typeof(TokenAuth))]
     public class ContactsController : Controller
     {
-        private readonly IPersonServices _personServices;
-        private readonly ICountryServices _countryServices;
-        public ContactsController(IPersonServices personServices, ICountryServices countryServices)
+        private readonly IPersonGetterServices _personGetterServices;
+		private readonly IPersonUpdaterServices _personUpdaterServices;
+		private readonly IPersonDeleterServices _personDeleterServices;
+		private readonly IPersonAdderServices _personAdderServices;
+		private readonly IPersonSorterServices _personSorterServices;
+		private readonly IPersonUploaderServices _personUploaderServices;
+		private readonly ICountryServices _countryServices;
+        public ContactsController(IPersonGetterServices personServices,
+            IPersonAdderServices personAdderServices,IPersonDeleterServices personDeleterServices, IPersonSorterServices
+             personSorterServices, IPersonUploaderServices personUploaderServices, IPersonUpdaterServices personUpdaterServices
+            , ICountryServices countryServices)
         {
-            _personServices = personServices;
+            _personGetterServices = personServices;
             _countryServices = countryServices;
+            _personUploaderServices = personUploaderServices;
+             _personUpdaterServices = personUpdaterServices;
+            _personDeleterServices = personDeleterServices;
+            _personAdderServices = personAdderServices;
+            _personSorterServices = personSorterServices;
         }
         [Route("/")]
         [Route("/Index")]
@@ -31,8 +44,8 @@ namespace ContactsManager.Controllers
             , string sortOrderOptions = "ASC")
         {
         
-            List<PersonResponse> persons = await _personServices.GetFiltered(searchText, searchBy);
-            List<PersonResponse> SortedList = await _personServices.GetSortedPersons(persons, sortBy,
+            List<PersonResponse> persons = await _personGetterServices.GetFiltered(searchText, searchBy);
+            List<PersonResponse> SortedList = await _personSorterServices.GetSortedPersons(persons, sortBy,
                 (SortOrderOptions)Enum.Parse<SortOrderOptions>(sortOrderOptions));
             return View(SortedList);
         }
@@ -55,13 +68,13 @@ namespace ContactsManager.Controllers
         public async Task<IActionResult> CreateContact(AddPersonRequest request)
         {
            
-            await _personServices.AddPerson(request);
+            await _personAdderServices.AddPerson(request);
             return RedirectToAction("Index");
         }
         [Route("[action]")]
         public async Task<IActionResult> personsPDF()
         {
-            List<PersonResponse> AllPersons = await _personServices.GetAllPeople();
+            List<PersonResponse> AllPersons = await _personGetterServices.GetAllPeople();
 
             return new ViewAsPdf("PersonsPDF", AllPersons, ViewData)
             {
@@ -74,7 +87,7 @@ namespace ContactsManager.Controllers
         [Route("[action]")]
         public async Task<IActionResult> personsExcel()
         {
-            MemoryStream memoryStream = await _personServices.GetPersonsExcel();
+            MemoryStream memoryStream = await _personGetterServices.GetPersonsExcel();
             return File(memoryStream, "pplication/vnd.openxmlformats-officedocument.spreadsheetml.sheet","persons.xlsx");
 
         }
@@ -96,7 +109,7 @@ namespace ContactsManager.Controllers
             }
             else
             {
-                ViewBag.Message= $"{ await  _personServices.UploadExcelFile(formFile)} contacts ware Added Successfully";
+                ViewBag.Message= $"{ await  _personUploaderServices.UploadExcelFile(formFile)} contacts ware Added Successfully";
             }
             return View();
         }
