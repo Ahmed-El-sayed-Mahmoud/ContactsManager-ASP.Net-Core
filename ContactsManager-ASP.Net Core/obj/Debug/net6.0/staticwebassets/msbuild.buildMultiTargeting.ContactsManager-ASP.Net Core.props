@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\ContactsManager-ASP.Net Core.props" />
-</Project>
