@@ -1,4 +1,6 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using ContactsManager.Core.Domain.Entities.IdentityEntities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext:IdentityDbContext<ApplicationUser,ApplicationRole,Guid>
     {
         public virtual DbSet<Person>? Persons { get; set; }
         public virtual DbSet<Country>?Countries { get; set; }

@@ -4,6 +4,7 @@ using ContactsManager_ASP.Net_Core.Filters.AuthorizationFilters;
 using ContactsManager_ASP.Net_Core.Filters.ExceptionFilters;
 using ContactsManager_ASP.Net_Core.Filters.ResultFilters;
 using Entities.Enums;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Rotativa.AspNetCore;
 using ServiceContracts;
